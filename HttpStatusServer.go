@@ -17,6 +17,7 @@ func main() {
 	InitStatusCodes()
 	http.HandleFunc("/", doIt)
 	println("http://127.0.0.1:55555/ is ready")
+	println("You can open it up and look at the document")
 	log.Fatal(http.ListenAndServe(":55555", nil))
 }
 
