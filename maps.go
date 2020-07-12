@@ -8,225 +8,225 @@ type StatusCodeResult struct {
 }
 
 var StatusCodes = map[string]StatusCodeResult{
-	"100": StatusCodeResult{
+	"100": {
 		Description: "Continue",
 		ExcludeBody: true,
 	},
-	"101": StatusCodeResult{
+	"101": {
 		Description: "Switching Protocols",
 		ExcludeBody: true,
 	},
-	"102": StatusCodeResult{
+	"102": {
 		Description: "Processing",
 		ExcludeBody: true,
 	},
-	"103": StatusCodeResult{
+	"103": {
 		Description: "Early Hints",
 		ExcludeBody: true,
 		IncludeHeaders: map[string]string{
 			"Link": "</Content/main.css>; rel=preload",
 		},
 	},
-	"200": StatusCodeResult{
+	"200": {
 		Description: "OK",
 	},
-	"201": StatusCodeResult{
+	"201": {
 		Description: "Created",
 	},
-	"202": StatusCodeResult{
+	"202": {
 		Description: "Accepted",
 	},
-	"203": StatusCodeResult{
+	"203": {
 		Description: "Non-Authoritative Information",
 	},
-	"204": StatusCodeResult{
+	"204": {
 		Description: "No Content",
 		ExcludeBody: true,
 	},
-	"205": StatusCodeResult{
+	"205": {
 		Description: "Reset Content",
 		ExcludeBody: true,
 	},
-	"206": StatusCodeResult{
+	"206": {
 		Description: "Partial Content",
 		IncludeHeaders: map[string]string{
 			"Content-Range": "0-30",
 		},
 	},
-	"300": StatusCodeResult{
+	"300": {
 		Description: "Multiple Choices",
 	},
-	"301": StatusCodeResult{
+	"301": {
 		Description: "Moved Permanently",
 		IncludeHeaders: map[string]string{
 			"Location": "http://127.0.0.1:5555",
 		},
 	},
-	"302": StatusCodeResult{
+	"302": {
 		Description: "Found",
 		IncludeHeaders: map[string]string{
 			"Location": "http://127.0.0.1:5555",
 		},
 	},
-	"303": StatusCodeResult{
+	"303": {
 		Description: "See Other",
 		IncludeHeaders: map[string]string{
 			"Location": "http://127.0.0.1:5555",
 		},
 	},
-	"304": StatusCodeResult{
+	"304": {
 		Description: "Not Modified",
 		ExcludeBody: true,
 	},
-	"305": StatusCodeResult{
+	"305": {
 		Description: "Use Proxy",
 		IncludeHeaders: map[string]string{
 			"Location": "http://127.0.0.1:5555",
 		},
 	},
-	"306": StatusCodeResult{
+	"306": {
 		Description: "Unused",
 	},
-	"307": StatusCodeResult{
+	"307": {
 		Description: "Temporary Redirect",
 		IncludeHeaders: map[string]string{
 			"Location": "http://127.0.0.1:5555",
 		},
 	},
-	"308": StatusCodeResult{
+	"308": {
 		Description: "Permanent Redirect",
 		IncludeHeaders: map[string]string{
 			"Location": "http://127.0.0.1:5555",
 		},
 	},
-	"400": StatusCodeResult{
+	"400": {
 		Description: "Bad Request",
 	},
-	"401": StatusCodeResult{
+	"401": {
 		Description: "Unauthorized",
 		IncludeHeaders: map[string]string{
 			"WWW-Authenticate": "Basic realm=\"Fake Realm\"",
 		},
 	},
-	"402": StatusCodeResult{
+	"402": {
 		Description: "Payment Required",
 	},
-	"403": StatusCodeResult{
+	"403": {
 		Description: "Forbidden",
 	},
-	"404": StatusCodeResult{
+	"404": {
 		Description: "Not Found",
 	},
-	"405": StatusCodeResult{
+	"405": {
 		Description: "Method Not Allowed",
 	},
-	"406": StatusCodeResult{
+	"406": {
 		Description: "Not Acceptable",
 	},
-	"407": StatusCodeResult{
+	"407": {
 		Description: "Proxy Authentication Required",
 		IncludeHeaders: map[string]string{
 			"Proxy-Authenticate": "Basic realm=\"Fake Realm\"",
 		},
 	},
-	"408": StatusCodeResult{
+	"408": {
 		Description: "Request Timeout",
 	},
-	"409": StatusCodeResult{
+	"409": {
 		Description: "Conflict",
 	},
-	"410": StatusCodeResult{
+	"410": {
 		Description: "Gone",
 	},
-	"411": StatusCodeResult{
+	"411": {
 		Description: "Length Required",
 	},
-	"412": StatusCodeResult{
+	"412": {
 		Description: "Precondition Failed",
 	},
-	"413": StatusCodeResult{
+	"413": {
 		Description: "Request Entity Too Large",
 	},
-	"414": StatusCodeResult{
+	"414": {
 		Description: "Request-URI Too Long",
 	},
-	"415": StatusCodeResult{
+	"415": {
 		Description: "Unsupported Media Type",
 	},
-	"416": StatusCodeResult{
+	"416": {
 		Description: "Requested Range Not Satisfiable",
 	},
-	"417": StatusCodeResult{
+	"417": {
 		Description: "Expectation Failed",
 	},
-	"418": StatusCodeResult{
+	"418": {
 		Description: "I'm a teapot",
 		Link:        "https://www.ietf.org/rfc/rfc2324.txt",
 	},
-	"421": StatusCodeResult{
+	"421": {
 		Description: "Misdirected Request",
 	},
-	"422": StatusCodeResult{
+	"422": {
 		Description: "Unprocessable Entity",
 	},
-	"423": StatusCodeResult{
+	"423": {
 		Description: "Locked",
 	},
-	"425": StatusCodeResult{
+	"425": {
 		Description: "Too Early",
 	},
-	"426": StatusCodeResult{
+	"426": {
 		Description: "Upgrade Required",
 	},
-	"428": StatusCodeResult{
+	"428": {
 		Description: "Precondition Required",
 	},
-	"429": StatusCodeResult{
+	"429": {
 		Description: "Too Many Requests",
 		IncludeHeaders: map[string]string{
 			"Retry-After": "5",
 		},
 	},
-	"431": StatusCodeResult{
+	"431": {
 		Description: "Request Header Fields Too Large",
 	},
-	"451": StatusCodeResult{
+	"451": {
 		Description: "Unavailable For Legal Reasons",
 	},
-	"500": StatusCodeResult{
+	"500": {
 		Description: "Internal Server Error",
 	},
-	"501": StatusCodeResult{
+	"501": {
 		Description: "Not Implemented",
 	},
-	"502": StatusCodeResult{
+	"502": {
 		Description: "Bad Gateway",
 	},
-	"503": StatusCodeResult{
+	"503": {
 		Description: "Service Unavailable",
 	},
-	"504": StatusCodeResult{
+	"504": {
 		Description: "Gateway Timeout",
 	},
-	"505": StatusCodeResult{
+	"505": {
 		Description: "HTTP Version Not Supported",
 	},
-	"506": StatusCodeResult{
+	"506": {
 		Description: "Variant Also Negotiates",
 	},
-	"507": StatusCodeResult{
+	"507": {
 		Description: "Insufficient Storage",
 	},
-	"511": StatusCodeResult{
+	"511": {
 		Description: "Network Authentication Required",
 	},
-	"520": StatusCodeResult{
+	"520": {
 		Description: "Web server is returning an unknown error",
 	},
-	"522": StatusCodeResult{
+	"522": {
 		Description: "Connection timed out",
 	},
-	"524": StatusCodeResult{
+	"524": {
 		Description: "A timeout occurred",
 	},
 }
