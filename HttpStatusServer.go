@@ -14,7 +14,6 @@ const SLEEP_MIN = 0
 const SLEEP_MAX = 300000 // 5 mins in milliseconds
 
 func main() {
-	InitStatusCodes()
 	http.HandleFunc("/", doIt)
 	println("http://127.0.0.1:55555/ is ready")
 	println("You can open it up and look at the document")
