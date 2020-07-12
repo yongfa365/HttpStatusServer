@@ -370,17 +370,16 @@ Connection timed out        </dd>
 <dd>
 A timeout occurred        </dd>
 </dl>
+
+</div>
+
+<div style="clear:both"></div>
 <p>If you send any other three digit number that's not in that list, we'll return it too. Or, <a href="https://github.com/yongfa365/HttpStatusServer">send us a pull request</a> to add full support for a new code.</p>
 <p>Enjoy!</p>
 
-</div>
-<footer>
 Created by
 https://github.com/yongfa365/HttpStatusServer
 <strong>We don't capture or store any data about the requests you make.</strong>
-</footer>
-
-</div>
 </body>
 </html>
 

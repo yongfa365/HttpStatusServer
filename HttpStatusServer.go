@@ -44,7 +44,7 @@ func doIt(rs http.ResponseWriter, rq *http.Request) {
 		if message == "" {
 			message = "Unknown Code"
 		}
-		statusData = StatusCodeResult{Description: statusCode + message}
+		statusData = StatusCodeResult{Description: message}
 	}
 
 	ExecuteResult(statusCode, statusData, rq, rs)
