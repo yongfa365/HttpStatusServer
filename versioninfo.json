@@ -21,15 +21,15 @@
     "StringFileInfo": {
         "Comments": "",
         "CompanyName": "yongfa365",
-        "FileDescription": "https://github.com/yongfa365/HttpStatusServer",
+        "FileDescription": "HttpStatusServer",
         "FileVersion": "",
         "InternalName": "",
-        "LegalCopyright": "",
+        "LegalCopyright": "https://github.com/yongfa365/HttpStatusServer",
         "LegalTrademarks": "",
         "OriginalFilename": "HttpStatusServer.exe",
         "PrivateBuild": "",
         "ProductName": "HttpStatusServer",
-        "ProductVersion": "v0.9.0.0",
+        "ProductVersion": "v0.9.1.0",
         "SpecialBuild": ""
     },
     "VarFileInfo": {

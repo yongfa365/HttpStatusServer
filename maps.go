@@ -59,19 +59,19 @@ var StatusCodes = map[string]StatusCodeResult{
 	"301": {
 		Description: "Moved Permanently",
 		IncludeHeaders: map[string]string{
-			"Location": "http://127.0.0.1:5555",
+			"Location": ROOT_URL,
 		},
 	},
 	"302": {
 		Description: "Found",
 		IncludeHeaders: map[string]string{
-			"Location": "http://127.0.0.1:5555",
+			"Location": ROOT_URL,
 		},
 	},
 	"303": {
 		Description: "See Other",
 		IncludeHeaders: map[string]string{
-			"Location": "http://127.0.0.1:5555",
+			"Location": ROOT_URL,
 		},
 	},
 	"304": {
@@ -81,7 +81,7 @@ var StatusCodes = map[string]StatusCodeResult{
 	"305": {
 		Description: "Use Proxy",
 		IncludeHeaders: map[string]string{
-			"Location": "http://127.0.0.1:5555",
+			"Location": ROOT_URL,
 		},
 	},
 	"306": {
@@ -90,13 +90,13 @@ var StatusCodes = map[string]StatusCodeResult{
 	"307": {
 		Description: "Temporary Redirect",
 		IncludeHeaders: map[string]string{
-			"Location": "http://127.0.0.1:5555",
+			"Location": ROOT_URL,
 		},
 	},
 	"308": {
 		Description: "Permanent Redirect",
 		IncludeHeaders: map[string]string{
-			"Location": "http://127.0.0.1:5555",
+			"Location": ROOT_URL,
 		},
 	},
 	"400": {

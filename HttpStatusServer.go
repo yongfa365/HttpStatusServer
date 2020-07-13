@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os/exec"
+	"runtime"
 	"strconv"
 	"strings"
 	"time"
@@ -12,11 +14,12 @@ import (
 
 const SLEEP_MIN = 0
 const SLEEP_MAX = 300000 // 5 mins in milliseconds
+const ROOT_URL = "http://127.0.0.1:55555/"
 
 func main() {
 	http.HandleFunc("/", doIt)
-	println("http://127.0.0.1:55555/ is ready")
-	println("You can open it up and look at the document")
+	println(ROOT_URL + " is ready. --by https://github.com/yongfa365/HttpStatusServer")
+	go OpenBrowser(ROOT_URL)
 	log.Fatal(http.ListenAndServe(":55555", nil))
 }
 
@@ -112,4 +115,22 @@ func SanitizeSleepParameter(sleep, min, max int) int {
 	}
 
 	return sleepData
+}
+
+func OpenBrowser(url string) {
+	var err error
+
+	switch runtime.GOOS {
+	case "linux":
+		err = exec.Command("xdg-open", url).Start()
+	case "windows":
+		err = exec.Command("rundll32", "url.dll,FileProtocolHandler", url).Start()
+	case "darwin":
+		err = exec.Command("open", url).Start()
+	default:
+		err = fmt.Errorf("unsupported platform")
+	}
+	if err != nil {
+		log.Fatal(err)
+	}
 }
