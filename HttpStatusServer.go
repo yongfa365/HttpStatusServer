@@ -44,6 +44,12 @@ func doIt(rs http.ResponseWriter, rq *http.Request) {
 		statusCode = rq.URL.Path[1:4]
 	}
 
+	if temp := rq.Header.Get("Access-Control-Allow-Headers"); temp != "" {
+		rs.Header().Set("Access-Control-Allow-Headers", temp)
+	}
+
+	rs.Header().Set("Access-Control-Allow-Origin", "*")
+
 	if statusCode == "" {
 		_, _ = fmt.Fprintf(rs, Index_Content)
 		return
