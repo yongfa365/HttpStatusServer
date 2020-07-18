@@ -2,6 +2,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"log"
 	"net/http"
@@ -14,13 +15,24 @@ import (
 
 const SLEEP_MIN = 0
 const SLEEP_MAX = 300000 // 5 mins in milliseconds
-const ROOT_URL = "http://127.0.0.1:55555/"
+var ROOT_URL string
+var Index_Content string
+
+var port string
+
+func init() {
+	flag.StringVar(&port, "port", "55555", "http port")
+	flag.Parse()
+
+	ROOT_URL = "http://127.0.0.1:" + port + "/"
+	Index_Content = GetIndexContent(port)
+}
 
 func main() {
 	http.HandleFunc("/", doIt)
 	println(ROOT_URL + " is ready. --by https://github.com/yongfa365/HttpStatusServer")
 	go OpenBrowser(ROOT_URL)
-	log.Fatal(http.ListenAndServe(":55555", nil))
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
 
 func doIt(rs http.ResponseWriter, rq *http.Request) {
@@ -33,7 +45,7 @@ func doIt(rs http.ResponseWriter, rq *http.Request) {
 	}
 
 	if statusCode == "" {
-		_, _ = fmt.Fprintf(rs, indexContent)
+		_, _ = fmt.Fprintf(rs, Index_Content)
 		return
 	}
 

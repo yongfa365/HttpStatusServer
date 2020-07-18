@@ -1,6 +1,7 @@
 package main
 
-var indexContent = `
+func GetIndexContent(port string) string {
+	return `
 
 <!DOCTYPE html>
 <html>
@@ -157,14 +158,14 @@ font-size: 12px;
 <body>
 <div id='content'>
 <header>
-<h1 id='title'>127.0.0.1:55555</h1>
+<h1 id='title'>127.0.0.1:` + port + `</h1>
 </header>
 <div id='view'>
 <p>This is a super simple service for generating different HTTP codes.</p>
 <p>It's useful for testing how your own scripts deal with varying responses.</p>
 <p>
 Just add the status code you want to the URL, like this:
-<a href="/200">http://127.0.0.1:5555/200</a>
+<a href="/200">http://127.0.0.1:` + port + `/200</a>
 </p>
 <p>We'll return a response like this:</p>
 <code>HTTP/1.1 {status code} {status description}
@@ -181,7 +182,7 @@ To get a JSON response back, you need to ensure that the Accept header contains 
 
 <p>
 If you want a delay on the response add a query string of sleep (the time in ms, max 5 minutes*), like this:
-<a href="/200?sleep=5000">127.0.0.1:55555/200?sleep=5000</a>
+<a href="/200?sleep=5000">127.0.0.1:` + port + `/200?sleep=5000</a>
 <br />
 <em>*When using the hosted instance the timeout is actually 230 seconds, which is the max timeout allowed by an Azure WebApp (see <a href="https://social.msdn.microsoft.com/Forums/en-US/05f254a6-9b34-4eb2-a5f7-2a82fb40135f/time-out-after-230-seconds?forum=windowsazurewebsitespreview" target="_blank">this thread post</a>). If you host it yourself in IIS/IIS Express you won't have that limit.</em>
 </p>
@@ -384,3 +385,4 @@ https://github.com/yongfa365/HttpStatusServer
 </html>
 
 `
+}
