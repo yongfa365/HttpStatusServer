@@ -32,5 +32,6 @@ go get github.com/josephspurrier/goversioninfo/cmd/goversioninfo
 go generate
 ```
 ### History
-- 2020-07-12 v0.9.1.0 程序运行后直接打开URL
-- 2020-07-12 v0.9.1.0 初始版本，.net转go首个版本
+- 2020-07-19 v0.9.2.0 支持cors,指定端口
+- 2020-07-13 v0.9.1.0 程序运行后直接打开URL
+- 2020-07-12 v0.9.0.0 初始版本，.net转go首个版本
