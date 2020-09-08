@@ -58,10 +58,6 @@ func doIt(rs http.ResponseWriter, rq *http.Request) {
 
 	DoSleep(sleep)
 
-	for i := 0; i < count; i++ {
-		message += message
-	}
-
 	var statusData StatusCodeResult
 	if rs2, ok := StatusCodes[statusCode]; ok {
 		statusData = rs2
@@ -72,6 +68,9 @@ func doIt(rs http.ResponseWriter, rq *http.Request) {
 		statusData = StatusCodeResult{Description: message}
 	}
 
+	for i := 0; i < count; i++ {
+		statusData.Description += statusData.Description
+	}
 	ExecuteResult(statusCode, statusData, rq, rs)
 }
 
