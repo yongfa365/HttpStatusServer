@@ -38,6 +38,7 @@ func main() {
 func doIt(rs http.ResponseWriter, rq *http.Request) {
 	var message = rq.URL.Query().Get("message")
 	var sleep, _ = strconv.Atoi(rq.URL.Query().Get("sleep"))
+	var count, _ = strconv.Atoi(rq.URL.Query().Get("count"))
 
 	var statusCode = ""
 	if len(rq.URL.Path) > 3 {
@@ -56,6 +57,10 @@ func doIt(rs http.ResponseWriter, rq *http.Request) {
 	}
 
 	DoSleep(sleep)
+
+	for i := 0; i < count; i++ {
+		message += message
+	}
 
 	var statusData StatusCodeResult
 	if rs2, ok := StatusCodes[statusCode]; ok {
